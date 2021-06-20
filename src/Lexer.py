@@ -1,5 +1,6 @@
 from typing import List
 
+from errors import SyntaxError
 from Token import Token
 from TokenType import TokenType, token_type_dict
 
@@ -42,4 +43,4 @@ class Lexer:
                 self.token_list.append(token)
                 return True
 
-        raise Exception(f'There is an error on position {self.pos}')
+        raise SyntaxError(pos=self.pos)
